@@ -46,7 +46,7 @@ paths           =
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : './src/**/*.jade'
     # libs        : ['', '']
-    # scriptLibs  : ['', '']
+    scriptLibs    : './node_modules/chart.js/Chart.min.js'
     jquery        : './node_modules/jquery/dist/jquery.min.js'
   build           :
     scripts       : './www/scripts/'
@@ -110,20 +110,6 @@ gulp.task 'templates', () ->
 # -----------------------------------------------------------------
 
 gulp.task 'scripts', () ->
-  # Libraries
-  # files = paths.src.scriptLibs
-  # files = files.concat([])
-
-  # gulp.src(files)
-  #   .pipe(plugins.concat('libs.min.js'))
-  #   .on('error', errorHandler)
-  #   .pipe(uglify())
-  #   .pipe(gulp.dest(paths.build.scripts))
-
-  #jQuery backup
-  gulp.src(paths.src.jquery)
-    .pipe(plugins.rename('jquery.js'))
-    .pipe(gulp.dest(paths.build.vendor))
 
   # Main Scripts
   gulp.src(paths.src.scripts)
@@ -132,6 +118,24 @@ gulp.task 'scripts', () ->
     .on('error', errorHandler)
     .pipe(uglify())
     .pipe(gulp.dest(paths.build.scripts))
+
+
+gulp.task 'scriptLibs', () ->
+  files = paths.src.scriptLibs
+  files = files.concat([])
+
+  gulp.src(files)
+    .pipe(plugins.concat('libs.min.js'))
+    .on('error', errorHandler)
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.build.scripts))
+
+  #jQuery backup
+  gulp.src(paths.src.jquery)
+    .pipe(plugins.rename('jquery.js'))
+    .pipe(gulp.dest(paths.build.vendor))
+
+
 
 
 # --------------------------------------
