@@ -1,3 +1,6 @@
+Graph Splash Page
+
+
 Instructions:
 
 1) In the project root, run 'npm install'
