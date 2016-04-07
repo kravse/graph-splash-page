@@ -1,0 +1,55 @@
+# User specific & automatically generated files #
+#################################################
+/public/app/tmp
+/plugins
+/vendors
+/build
+.build
+/dist
+/tags
+npm-debug.log
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tar
+*.gz
+*.tar.gz
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.bundle/
+ehthumbs.db
+Thumbs.db
+
+# packages Stuff #
+####################
+.sass-cache
+*.vagrant
+tmp/
+node_modules/
+bower_components/
+Gemfile.lock
+
+!*.gitkeep
