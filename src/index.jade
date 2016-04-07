@@ -8,7 +8,7 @@ html.no-js
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='styles/main.min.css')
     //- link(rel='stylesheet', href='styles/libs.min.css')
-    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css')
   body
     <!--[if lt IE 8]>
     p.browsehappy
@@ -18,13 +18,22 @@ html.no-js
     <![endif]-->
 
     .wrapper
+      .nav
+        img.logo(src="../images/logo.png" alt="m02")
 
-      h1 hello
-      h2 hello
-      h3 h3llo
-      h4 hrer
-      h5 herlje
-      p hello
+        .cta
+          a(href="#") Get free trial
+          button.small.transparent Buy Now
+
+      section.hero
+        h1 Share your Files with Ease
+        h3 We push ourselves to new levels of inspired excellence with each project and we sweat creativity.
+
+      section.buy
+        h2 We push ourselves to new levels of inspired excellence with each project and we sweat creativity. You won’t see anything until we’re done drooling at the result.
+
+        button.green Buy now for €23
+
 
     script(src='scripts/vendor/jquery.js')
     script window.jQuery || document.write('<script src="scripts/vendor/jquery.js"><\/script>')

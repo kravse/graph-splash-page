@@ -46,7 +46,7 @@ paths           =
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : './src/**/*.jade'
     # libs        : ['', '']
-    scriptLibs    : './node_modules/chart.js/Chart.min.js'
+    scriptLibs    : ['./node_modules/chart.js/Chart.min.js', './node_modules/slick-carousel/slick/slick.min.js']
     jquery        : './node_modules/jquery/dist/jquery.min.js'
   build           :
     scripts       : './www/scripts/'

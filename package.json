@@ -15,6 +15,7 @@
   "devDependencies": {
     "jquery": "2.1.4",
     "chart.js": "*",
+    "slick-carousel": "*",
     "jade": "*",
     "jeet": "*",
     "gulp": "*",
