@@ -45,7 +45,7 @@ paths           =
     styles        : './src/styles/styles.styl'
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : './src/**/*.jade'
-    # libs        : ['', '']
+    styleLibs     : './node_modules/slick-carousel/slick/slick.css'
     scriptLibs    : ['./node_modules/chart.js/Chart.min.js', './node_modules/slick-carousel/slick/slick.min.js']
     jquery        : './node_modules/jquery/dist/jquery.min.js'
   build           :
@@ -67,21 +67,13 @@ paths           =
 gulp.task('default', defaultTasks)
 
 # --------------------------------------
-# Styles Task
+# Styles  Task
 # --------------------------------------
 
 gulp.task 'styles', () ->
 
   # Define
-  # libs  = gulp.src(paths.src.libs)
   main  = gulp.src(paths.src.styles)
-
-  # Create Libs
-  # libs
-  #   .pipe(cleanCSS())
-  #   .pipe(plugins.rename('libs.min.css'))
-  #   .on('error', errorHandler)
-  #   .pipe(gulp.dest(paths.build.styles))
 
   # Create Main
   main
@@ -91,6 +83,21 @@ gulp.task 'styles', () ->
     ]))
     .pipe(cleanCSS())
     .pipe(plugins.rename('main.min.css'))
+    .on('error', errorHandler)
+    .pipe(gulp.dest(paths.build.styles))
+
+# --------------------------------------
+# Style Libraries Task
+# --------------------------------------
+
+gulp.task 'styleLibs', () ->
+
+  libs  = gulp.src(paths.src.styleLibs)
+
+  # Create Libs
+  libs
+    .pipe(cleanCSS())
+    .pipe(plugins.rename('libs.min.css'))
     .on('error', errorHandler)
     .pipe(gulp.dest(paths.build.styles))
 
@@ -119,6 +126,9 @@ gulp.task 'scripts', () ->
     .pipe(uglify())
     .pipe(gulp.dest(paths.build.scripts))
 
+# --------------------------------------
+# Script Libraries Task
+# --------------------------------------
 
 gulp.task 'scriptLibs', () ->
   files = paths.src.scriptLibs

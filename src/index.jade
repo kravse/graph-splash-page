@@ -7,7 +7,7 @@ html.no-js
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='styles/main.min.css')
-    //- link(rel='stylesheet', href='styles/libs.min.css')
+    link(rel='stylesheet', href='styles/libs.min.css')
     link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css')
   body
     <!--[if lt IE 8]>
@@ -34,8 +34,29 @@ html.no-js
 
         button.green Buy now for €23
 
+      #slider.slider
+
+        .slide
+          h2 "Just started using awesome Module. Great way to boost the hard designing or prototyping process. Also a perfect tool for creative studios and freelancers”
+          h4 Irina Bykova
+          h5 Photographer, works with Slack team
+
+
+        .slide
+          h2 "Just started using awesome Module. Great way to boost the hard designing or prototyping process. Also a perfect tool for creative studios and freelancers”
+          h4 Jared Krause
+          h5 Developer, works with Slack team
+
+        .slide
+          h2 "The worst thing I can be is the same as everybody else. I hate that."
+          h4 Arnold schwarzenegger
+          h5 HR, works with Slack team
+
+
 
     script(src='scripts/vendor/jquery.js')
     script window.jQuery || document.write('<script src="scripts/vendor/jquery.js"><\/script>')
-    //- script(src='scripts/libs.min.js')
+    script(src='scripts/libs.min.js')
     script(src='scripts/main.min.js')
+    script(type='text/javascript').
+      Main.init();
