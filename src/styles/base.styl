@@ -137,8 +137,11 @@ section
 .slider
   width: 100%
   border-top: 1px solid $off-white
-  padding: 90px
+  padding: 45px 90px 90px
   text-align: left
+
+  +media('tablet')
+    padding:  $mob-gutter
 
   h4, h5
     font-weight: 300
@@ -146,6 +149,7 @@ section
   .slick-arrow
     position: absolute
     top: 50%
+    margin-top: -25px
     overflow: hidden
     text-indent: -1000px
     background-color: transparent
@@ -167,3 +171,63 @@ section
     &.slick-next
       right: 0
       transform: rotate(180deg)
+
+  .content
+    position: relative
+    padding-left: 240px
+    position: relative
+    padding-top: 45px
+
+    +media('tablet')
+      padding-left: 0
+
+    .text
+      +media('tablet')
+        padding: 0 $mob-gutter
+
+  .profile
+    width: 240px
+    position: absolute
+    left: 0
+    top: 50px
+
+    +media('tablet')
+      width: 100%
+      left: 0
+      position: relative
+      margin-bottom: $mob-gutter
+
+    .avatar,.company-logo
+      position: relative
+      img
+        position: absolute
+        opacity: 0
+        height: 0
+        width: 0
+
+    .avatar
+      position: relative
+      display: block
+      margin: 0 auto
+      width: 120px
+      height: 120px
+      background-size: cover
+      border-radius: 5px
+
+      +media('tablet')
+        margin: 0 auto
+        display: block
+
+      .company-logo
+        position: absolute
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        overflow: hidden
+        background-repeat: no-repeat
+        background-size: 50%
+        background-color: $white;
+        background-position: center center
+        top: -25px
+        right: -25px
+        box-shadow: 2px 2px 5px 0px rgba(238,238,238,1);
