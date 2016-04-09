@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "jquery": "2.1.4",
-    "chart.js": "*",
+    "dragdealer": "*",
+    "chart.js": "1.0.2",
     "slick-carousel": "*",
     "jade": "*",
     "jeet": "*",

@@ -10,10 +10,16 @@ Main = (->
       console.log 'scroll'
 
     drawChart()
+    createDragger()
 
-
-
+  createDragger = () ->
+    new Dragdealer('just-a-slider', {
+      x: 0.5,
+      animationCallback: (x, y) ->
+        $('.graph-inner').css('left', (x * 100) + "%")
+    }) 
   drawChart = () ->
+
     Chart.defaults.global =
       animation: true
       animationSteps: 60
@@ -23,7 +29,7 @@ Main = (->
       scaleSteps: null
       scaleStepWidth: null
       scaleStartValue: null
-      scaleLineColor: 'rgba(0,0,0,.1)'
+      scaleLineColor: 'rgba(1,1,1,0)'
       scaleLineWidth: 1
       scaleShowLabels: false
       scaleLabel: '<%=value%>'
@@ -42,28 +48,29 @@ Main = (->
         'touchstart'
         'touchmove'
       ]
-      tooltipFillColor: 'rgba(0,0,0,0.8)'
+      tooltipFillColor: 'rgba(83,187,179,1)'
       tooltipFontFamily: '\'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif'
       tooltipFontSize: 14
       tooltipFontStyle: 'normal'
       tooltipFontColor: '#fff'
-      tooltipTitleFontFamily: '\'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif'
+      tooltipTitleFontFamily: '\'Roboto\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif'
       tooltipTitleFontSize: 14
-      tooltipTitleFontStyle: 'bold'
+      tooltipTitleFontStyle: 'normal'
       tooltipTitleFontColor: '#fff'
-      tooltipYPadding: 6
-      tooltipXPadding: 6
+      tooltipYPadding: 15
+      tooltipXPadding: 20
       tooltipCaretSize: 8
-      tooltipCornerRadius: 6
-      tooltipXOffset: 10
-      tooltipTemplate: '<%if (label){%><%=label%>: <%}%><%= value %>'
+      tooltipCornerRadius: 20
+      tooltipXOffset: 50
+      tooltipYOffset: 50
+      tooltipTemplate: '<%if (label){%><%=label%>: $<%}%><%= value %>'
       multiTooltipTemplate: '<%= value %>'
       onAnimationProgress: ->
       onAnimationComplete: ->
 
 
     randomScalingFactor = ->
-      Math.round Math.random() * 10
+      Math.round Math.random() * (5000 - 100) + 100;
 
     lineChartData =
       labels: [
@@ -83,12 +90,12 @@ Main = (->
       datasets: [
         {
           label: 'My First dataset'
-          fillColor: 'rgba(220,220,220,0.2)'
-          strokeColor: 'rgba(220,220,220,1)'
-          pointColor: 'rgba(220,220,220,1)'
+          fillColor: 'rgba(250,250,250,0.6)'
+          strokeColor: '#e1e8ee'
+          pointColor: '#e1e8ee'
           pointStrokeColor: '#fff'
-          pointHighlightFill: '#fff'
-          pointHighlightStroke: 'rgba(220,220,220,1)'
+          pointHighlightFill: '#acbbba'
+          pointHighlightStroke: '#acbbba'
           data: [
             randomScalingFactor()
             randomScalingFactor()
@@ -105,10 +112,16 @@ Main = (->
           ]
         }
       ]
+       
 
     window.onload = ->
       ctx = document.getElementById('canvas').getContext('2d')
-      window.myLine = new Chart(ctx).Line(lineChartData, {bezierCurve: false, scaleShowHorizontalLines: false, pointDotRadius : 7})
+      window.myLine = new Chart(ctx).Line(lineChartData, {
+        bezierCurve: false, 
+        scaleGridLineColor: '#e1e8ee', 
+        scaleShowHorizontalLines: false, 
+        pointDotRadius : 7
+      })
       return
 
     # ---

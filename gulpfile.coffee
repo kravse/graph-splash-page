@@ -37,7 +37,6 @@ fileHandler = (error) ->
 # -----------------------------------------------------------------
 #  Paths
 # -----------------------------------------------------------------
-
 paths           =
   src             :
     default       : './src/'
@@ -45,8 +44,15 @@ paths           =
     styles        : './src/styles/styles.styl'
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : './src/**/*.jade'
-    styleLibs     : './node_modules/slick-carousel/slick/slick.css'
-    scriptLibs    : ['./node_modules/chart.js/Chart.min.js', './node_modules/slick-carousel/slick/slick.min.js']
+    styleLibs     : [
+      './node_modules/slick-carousel/slick/slick.css',
+      './node_modules/dragdealer/src/dragdealer.css'
+    ]
+    scriptLibs    : [
+      './node_modules/chart.js/Chart.min.js', 
+      './node_modules/slick-carousel/slick/slick.min.js',
+      './node_modules/dragdealer/src/dragdealer.js'
+    ]
     jquery        : './node_modules/jquery/dist/jquery.min.js'
   build           :
     scripts       : './www/scripts/'
@@ -91,15 +97,14 @@ gulp.task 'styles', () ->
 # --------------------------------------
 
 gulp.task 'styleLibs', () ->
+  src = paths.src.styleLibs.concat([])
 
-  libs  = gulp.src(paths.src.styleLibs)
-
-  # Create Libs
-  libs
+  gulp.src(src)
+    .pipe(plugins.concat('libs.min.css'))
     .pipe(cleanCSS())
-    .pipe(plugins.rename('libs.min.css'))
     .on('error', errorHandler)
     .pipe(gulp.dest(paths.build.styles))
+ 
 
 # --------------------------------------
 # Templates Task

@@ -20,28 +20,26 @@ html.no-js
     .wrapper
       .nav
         img.logo(src="../images/logo.png" alt="m02")
-
         .cta
           a(href="#") Get free trial
           button.small.transparent Buy Now
-
       section.hero
         h1 Share your Files with Ease
         h3 We push ourselves to new levels of inspired excellence with each project and we sweat creativity.
-
+        button.transparent Buy now | €23
       .graph
         .graph-inner
-          canvas#canvas(height="400" width="100%")
-
+          canvas#canvas(width="100%")
+          #chartjs-tooltip
+      .drag-slider-container
+        #just-a-slider.dragdealer
+          .handle
+        p.label Drag to time travel
       section.buy
         h2 We push ourselves to new levels of inspired excellence with each project and we sweat creativity. You won’t see anything until we’re done drooling at the result.
-
         button.green Buy now for €23
-
         button.scroll-cta scroll down
-
       #slider.slider
-
         .slide
           .content
             .profile
@@ -53,8 +51,6 @@ html.no-js
               h2 "Just started using awesome Module. Great way to boost the hard designing or prototyping process. Also a perfect tool for  creative studios and freelancers”
               h4 Irina Bykova
               h5 Photographer, works with Slack team
-
-
         .slide
           .content
             .profile
@@ -66,16 +62,13 @@ html.no-js
               h2 "Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations.”
               h4 Steve Jobs
               h5 CEO, Apple Inc.
-
       .license
         section
           h1 Choose Your License
-
       .footer
         .inner
           .footer-logo
             img(src="images/foot-logo.png")
-
           ul
             li
               a(href="#") Apps
@@ -87,10 +80,8 @@ html.no-js
               a(href="#") Nature
             li
               a(href="#") Creative
-
           .copyright
             span &copy; 2016 Great Simple
-
 
     script(src='scripts/vendor/jquery.js')
     script window.jQuery || document.write('<script src="scripts/vendor/jquery.js"><\/script>')
