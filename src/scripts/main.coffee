@@ -2,7 +2,7 @@ Main = (->
 
   init = () ->
 
-    $.getJSON 'data.json', (data) =>
+    $.getJSON './scripts/data.json', (data) =>
       drawChart(data)
 
     # ---

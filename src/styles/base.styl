@@ -96,7 +96,7 @@ button
   &.transparent
     background-color: transparent
     border: 2px solid $light-grey
-    color: $light
+    color: $dark-grey
 
     &:hover
       background-color: $theme-color
@@ -141,7 +141,7 @@ section
     font-size: em($h5)
 
     a
-      color: $light
+      color: $dark-grey
       text-decoration: none
 
       &:hover
@@ -528,12 +528,16 @@ section
       h2, h5
         font-weight: 300
       h5
-        color: $light
+        color: $dark-grey
       +media('minTab')
         height: 230px
     
     .bottom
       padding: 20px
+      p
+        color: $dark-grey
+      h5
+        font-weight: 300
       
       +media('minTab')
         height: 220px
