@@ -487,8 +487,10 @@ section
           
           .corner
             opacity: 1
-            filter: none
-      
+      +media('tablet')
+        .corner
+          opacity: 1
+          
       .corner
         position: absolute
         top: -1px
