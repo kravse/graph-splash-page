@@ -17,71 +17,213 @@ html.no-js
       | to improve your experience.
     <![endif]-->
 
+    html
+  body
     .wrapper
       .nav
-        img.logo(src="./images/logo.png" alt="m02")
+        img.logo(alt='m02', src='./images/logo.png')
         .cta
-          a(href="#") Get free trial
-          button.small.transparent Buy Now
+          a(href='#') <span class="desktop">Get </span>free trial
+          button.small.transparent.scroll Buy <span class="desktop"> Now</span>
       section.hero
         h1 Share your Files with Ease
         h3 We push ourselves to new levels of inspired excellence with each project and we sweat creativity.
-        button.transparent Buy now | €23
+        button.transparent.scroll Buy now | €23
       .graph
-        .graph-inner
-          canvas#canvas(width="100%")
+        .graph-inner(style='left: 50%;')
+          canvas#canvas(height='640', style='width: 2552px; height: 320px;', width='5104')
           #chartjs-tooltip
       .drag-slider-container
         #just-a-slider.dragdealer
-          .handle
+          .handle(style='perspective: 1000px; backface-visibility: hidden; transform: translateX(555px);')
         p.label Drag to time travel
       section.buy
-        h2 We push ourselves to new levels of inspired excellence with each project and we sweat creativity. You won’t see anything until we’re done drooling at the result.
-        button.green Buy now for €23
-        button.scroll-cta scroll down
+        h2
+          | We push ourselves to new levels of inspired excellence with
+          | each project and we sweat creativity. You won’t see anything until
+          | we’re done drooling at the result.
+        button.green.scroll Buy now for €23
+        button.scroll-cta.scroll scroll down
       #slider.slider
         .slide
           .content
             .profile
-              .avatar(style="background-image: url('./images/Userpic.png')")
-                img(src="./images/Userpic.png")
-                .company-logo(style="background-image: url('./images/company-logo.png')")
-                  img(src="./images/company-logo.png")
+              .avatar(style="background-image: url('./images/jobs.jpg')")
+                img(src='./images/Userpic.png')
+                .company-logo(style="background-image: url('./images/apple.png')")
+                  img(src='./images/company-logo.png')
             .text
-              h2 "Just started using awesome Module. Great way to boost the hard designing or prototyping process. Also a perfect tool for  creative studios and freelancers”
-              h4 Irina Bykova
-              h5 Photographer, works with Slack team
+              h2
+                | "Sometimes when you innovate, you make
+                | mistakes. It is best to admit them quickly, and
+                | get on with improving your other
+                | innovations.”
+              h4 Steve Jobs
+              h5 CEO, Apple Inc.
         .slide
           .content
             .profile
-              .avatar(style="background-image: url('./images/jobs.jpg')")
-                img(src="./images/Userpic.png")
-                .company-logo(style="background-image: url('./images/apple.png')")
-                  img(src="./images/company-logo.png")
+              .avatar(style="background-image: url('./images/Userpic.png')")
+                img(src='./images/Userpic.png')
+                .company-logo(style="background-image: url('./images/company-logo.png')")
+                  img(src='./images/company-logo.png')
             .text
-              h2 "Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations.”
-              h4 Steve Jobs
-              h5 CEO, Apple Inc.
-      .license
+              h2
+                | "Just started using awesome Module. Great
+                | way to boost the hard designing or prototyping
+                | process. Also a perfect tool for creative
+                | studios and freelancers”
+              h4 Irina Bykova
+              h5 Photographer, works with Slack team
+      #license.license
         section
           h1 Choose Your License
+          .cards
+            .card
+              .flip-container
+                .flipper
+                  .front
+                    .card-inner
+                      .corner
+                      .top
+                        h2 Personal
+                        h5
+                          | Just started using awesome
+                          | Module. Great way to boost the hard
+                          | designing or prototyping
+                          | process.
+                      .bottom
+                        .copy
+                          h1.free Free
+                          p
+                            | Per month billed annualy or
+                            | $250 from month to month
+                        button.green
+                          | Get
+                          | it
+                  .back
+                    .card-inner
+                      button.close x
+                      .top
+                        h2 Info
+                        h5
+                          | Lorem ipsum dolor sit amet,
+                          | consectetur adipiscing elit, sed do
+                          | eiusmod tempor incididunt ut labore
+                          | et dolore magna aliqua.
+                      .bottom
+                        h5
+                          | Lorem ipsum dolor sit amet.
+                          | Lorem ipsum dolor sit amet. Lorem
+                          | ipsum dolor sit
+                          | amet.
+                        button.green Buy
+            .card
+              .flip-container
+                .flipper
+                  .front
+                    .card-inner
+                      .corner
+                      .top
+                        h2 Agency
+                        h5
+                          | Also a perfect tool for
+                          | creative studios and
+                          | freelancers
+                      .bottom
+                        .copy
+                          h1
+                            sup $
+                            | 132
+                          p
+                            | Per month billed annualy or
+                            | $250 from month to month
+                        button.green
+                          | Buy
+                          | now
+                  .back
+                    .card-inner
+                      button.close x
+                      .top
+                        h2 Info
+                        h5
+                          | Lorem ipsum dolor sit amet,
+                          | consectetur adipiscing elit, sed do
+                          | eiusmod tempor incididunt ut labore
+                          | et dolore magna aliqua.
+                      .bottom
+                        h5
+                          | Lorem ipsum dolor sit amet.
+                          | Lorem ipsum dolor sit amet. Lorem
+                          | ipsum dolor sit
+                          | amet.
+                        button.green Buy
+            .card
+              .flip-container
+                .flipper
+                  .front
+                    .card-inner
+                      .corner
+                      .top
+                        h2 Unlimited
+                        h5
+                          | Living in today’s metropolitan
+                          | world of cellular phones, mobile
+                          | computers
+                      .bottom
+                        .copy
+                          h1
+                            sup $
+                            | 232
+                          p
+                            | Per month billed annualy or
+                            | $250 from month to month
+                        button.green
+                          | Buy
+                          | now
+                  .back
+                    .card-inner
+                      button.close x
+                      .top
+                        h2 Info
+                        h5
+                          | Lorem ipsum dolor sit amet,
+                          | consectetur adipiscing elit, sed do
+                          | eiusmod tempor incididunt ut labore
+                          | et dolore magna aliqua.
+                      .bottom
+                        h5
+                          | Lorem ipsum dolor sit amet.
+                          | Lorem ipsum dolor sit amet. Lorem
+                          | ipsum dolor sit
+                          | amet.
+                        button.green Buy
+      section.signup
+        h1 Become One of Us
+        h3
+          | Module 01 is big, stylish and handy UI Kit, full of many useful
+          | elements
+        .input
+          input(name='email', placeholder='E-mail address', type='text')
+          button.green Let's chat
       .footer
         .inner
           .footer-logo
-            img(src="images/foot-logo.png")
+            img(src='./images/foot-logo.png')
           ul
             li
-              a(href="#") Apps
+              a(href='#') Apps
             li
-              a(href="#") Gadgets
+              a(href='#') Gadgets
             li
-              a(href="#") Science
+              a(href='#') Science
             li
-              a(href="#") Nature
+              a(href='#') Nature
             li
-              a(href="#") Creative
+              a(href='#') Creative
           .copyright
-            span &copy; 2016 Great Simple
+            span © 2016 Great Simple
+
 
     script(src='scripts/vendor/jquery.js')
     script window.jQuery || document.write('<script src="scripts/vendor/jquery.js"><\/script>')

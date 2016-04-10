@@ -6,8 +6,14 @@ Main = (->
       autoplay: true,
       autoplaySpeed: 6000
 
-    $(document).on 'click', '.scroll-cta', ->
-      console.log 'scroll'
+    $(document).on 'click', '.corner', ->
+      $(this).parents('.flip-container').addClass('flipped')
+
+    $(document).on 'click', '.card .close', ->
+      $(this).parents('.flip-container').removeClass('flipped')
+
+    $(document).on 'click', '.scroll', ->
+      $('html, body').animate { scrollTop: $('#license').offset().top }, 450
 
     drawChart()
     createDragger()
