@@ -60,7 +60,6 @@ paths           =
     vendor        : './www/scripts/vendor/'
     styles        : './www/styles/'
     images        : './www/images/'
-    data          : './www/data/'
     templates     : './www/'
   watch           :
     scripts       : './src/**/*.{js,coffee}'
@@ -82,7 +81,7 @@ gulp.task('default', defaultTasks)
 gulp.task 'data', () ->
   # Define
   gulp.src(paths.src.data)
-    .pipe(gulp.dest(paths.build.data))
+    .pipe(gulp.dest(paths.build.scripts))
 
 # --------------------------------------
 # Styles  Task
