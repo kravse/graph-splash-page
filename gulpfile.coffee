@@ -10,7 +10,7 @@
 #  Setup
 # -----------------------------------------------------------------
 
-defaultTasks    = ['scripts', 'styles', 'images', 'templates']
+defaultTasks    = ['scripts', 'styles', 'images', 'templates', 'data']
 gulp 			      = require('gulp')
 uglify          = require('gulp-uglify')
 plugins 		    = require('gulp-load-plugins')()
@@ -40,6 +40,7 @@ fileHandler = (error) ->
 paths           =
   src             :
     default       : './src/'
+    data          : './src/data/**/*.json'
     scripts       : './src/scripts/**/*.coffee'
     styles        : './src/styles/styles.styl'
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
@@ -59,11 +60,13 @@ paths           =
     vendor        : './www/scripts/vendor/'
     styles        : './www/styles/'
     images        : './www/images/'
+    data          : './www/data/'
     templates     : './www/'
   watch           :
     scripts       : './src/**/*.{js,coffee}'
     styles        : './src/**/*.styl'
     templates     : './src/**/*.jade'
+    data          : './src/data/*.json'
 
 
 # -----------------------------------------------------------------
@@ -71,6 +74,15 @@ paths           =
 # -----------------------------------------------------------------
 
 gulp.task('default', defaultTasks)
+
+# --------------------------------------
+# move Task
+# --------------------------------------
+
+gulp.task 'data', () ->
+  # Define
+  gulp.src(paths.src.data)
+    .pipe(gulp.dest(paths.build.data))
 
 # --------------------------------------
 # Styles  Task
@@ -173,5 +185,6 @@ gulp.task 'watch', () ->
 
   # Watch Files & Kick-off Tasks
   gulp.watch(paths.watch.templates, ['templates']).on('error', errorHandler)
+  gulp.watch(paths.watch.data, ['data']).on('error', errorHandler)
   gulp.watch(paths.watch.styles, ['styles']).on('error', errorHandler)
   gulp.watch(paths.watch.scripts, ['scripts']).on('error', errorHandler)
