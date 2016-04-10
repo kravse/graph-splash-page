@@ -114,7 +114,7 @@ section
     padding: $mob-gutter 10px
 
   h1, h3
-    max-width: 600px
+    max-width: 500px
     margin-left: auto
     margin-right: auto
 
@@ -156,6 +156,9 @@ section
 
 .hero
   padding-bottom: 50px
+  
+  +media('mobile')
+    padding-top: $gutter
 
 /* ---- graph ---- */
 
@@ -269,6 +272,7 @@ section
       background-color: $off-white
 
 /* ---- slider ---- */
+
 .slider
   width: 100%
   border-top: 1px solid $off-white
@@ -382,7 +386,7 @@ section
         right: -25px
         standard-box-shadow()
 
-/* ---- slider ---- */
+/* ---- license ---- */
 .license
   background: $soft-grey
   
@@ -443,7 +447,7 @@ section
       
     .card
       span(1/3)
-      min-height: 450px
+      min-height: 480px
       padding: 15px
       
       +media('tablet')
@@ -534,6 +538,8 @@ section
       
       +media('minTab')
         height: 220px
+
+/* ---- signup ---- */
 
 
 .signup
